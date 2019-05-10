@@ -8,14 +8,13 @@ if (process.env.NODE_ENV === 'development') {
   process.NODE_ENV === 'production' ||
   process.NODE_ENV !== 'development'
 ) {
-  callbackURL = `https://labs10-shopping-list.netlify.com/callback`
+  callbackURL = `https://shopappnewdeploy.netlify.com/callback`
 }
 
 class Auth {
   constructor() {
     this.auth0 = new auth0.WebAuth({
       domain: process.env.REACT_APP_AUTH0_DOMAIN,
-      audience: 'https://shoptrak.auth0.com/api/v2/',
       clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
       redirectUri: `${callbackURL}`,
       responseType: 'id_token',
